@@ -18,14 +18,22 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_radioButton_clicked(bool checked)
+void MainWindow::on_pushButton_clicked()
 {
-    if (checked) {
-        receipt.setCity("Vancouver");
-        ui->textBrowser->setText(receipt.printReceipt());
-    } else {
-        receipt.setCity("Burnaby");
-        ui->textBrowser->setText(QString::fromStdString(receipt.getCity()));
-    }
+    ui->textBrowser->setText(receipt.printReceipt());
 }
+
+void MainWindow::on_branch_TextHere_textChanged()
+{
+    QString textValue = ui->branch_TextHere->toPlainText();
+    receipt.setBranch(textValue.toStdString());
+}
+
+void MainWindow::on_city_TextHere_textChanged()
+{
+    QString textValue = ui->city_TextHere->toPlainText();
+    receipt.setCity(textValue.toStdString());
+}
+
+
 
