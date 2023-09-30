@@ -8,6 +8,9 @@
 #include "nlohmann/json.hpp"
 #include <fstream>
 
+#include <QString>
+#include <QTextStream>
+
 class Item {
 private:
     int id;
@@ -79,19 +82,22 @@ public:
         items.push_back(item);
     }
 
-    void printReceipt() const {
-        std::cout << std::endl;
-        std::cout << "---------------------------" << std::endl;
-        std::cout << title << std::endl;
-        std::cout << branch << std::endl;
-        std::cout << street << std::endl;
-        std::cout << city << std::endl << std::endl;
-        std::cout << "Member " << member << std::endl;
-        std::cout << std::endl;
+    QString printReceipt() const {
+        QString receipt;
+        QTextStream out(&receipt);
+
+        out << "\n";
+        out << "---------------------------\n";
+        out << QString::fromStdString(title) << "\n";
+        out << QString::fromStdString(branch) << "\n";
+        out << QString::fromStdString(street) << "\n";
+        out << QString::fromStdString(city) << "\n\n";
+        out << "Member " << member << "\n";
+        out << "\n";
 
         double subtotal = 0.0;
         for (const auto& item : items) {
-            std::cout << item.getId() << " " << item.getName() << " " << std::fixed << std::setprecision(2) << item.getPrice() << std::endl;
+            out << QString::number(item.getId()) << " " << QString::fromStdString(item.getName()) << " " << QString::number(item.getPrice(), 'f', 2) << "\n";
             subtotal += item.getPrice();
         }
 
@@ -100,13 +106,16 @@ public:
         double tax = gst + pst;
         double total = subtotal + tax;
 
-        std::cout << std::endl;
-        std::cout << "Subtotal " << subtotal << std::endl;
-        std::cout << "Tax " << tax << " (GST " << gst << " PST " << pst << ")" << std::endl;
-        std::cout << "TOTAL (" << total << ")" << std::endl;
-        std::cout << "---------------------------" << std::endl;
-        std::cout << std::endl;
+        out << "\n";
+        out << "Subtotal " << QString::number(subtotal, 'f', 2) << "\n";
+        out << "Tax " << QString::number(tax, 'f', 2) << " (GST " << QString::number(gst, 'f', 2) << " PST " << QString::number(pst, 'f', 2) << ")\n";
+        out << "TOTAL (" << QString::number(total, 'f', 2) << ")\n";
+        out << "---------------------------\n";
+        out << "\n";
+
+        return receipt;
     }
+
 
     void applyDiscountToItem(int itemId, double percentage) {
         for (auto& item : items) {

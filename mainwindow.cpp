@@ -3,6 +3,8 @@
 
 #include "import/store.h"
 
+Receipt receipt;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -18,10 +20,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_radioButton_clicked(bool checked)
 {
-    Receipt receipt;
     if (checked) {
         receipt.setCity("Vancouver");
-        ui->textBrowser->setText(QString::fromStdString(receipt.getCity()));
+        ui->textBrowser->setText(receipt.printReceipt());
     } else {
         receipt.setCity("Burnaby");
         ui->textBrowser->setText(QString::fromStdString(receipt.getCity()));
