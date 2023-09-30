@@ -32,6 +32,13 @@ void MainWindow::on_title_TextHere_textChanged()
     updateTextBrowser();
 }
 
+void MainWindow::on_street_TextHere_textChanged()
+{
+    QString textValue = ui->street_TextHere->toPlainText();
+    receipt.setStreet(textValue.toStdString());
+    updateTextBrowser();
+}
+
 void MainWindow::on_branch_TextHere_textChanged()
 {
     QString textValue = ui->branch_TextHere->toPlainText();

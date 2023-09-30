@@ -24,6 +24,8 @@ private slots:
 
     void on_title_TextHere_textChanged();
 
+    void on_street_TextHere_textChanged();
+
 private:
     Ui::MainWindow *ui;
 };
