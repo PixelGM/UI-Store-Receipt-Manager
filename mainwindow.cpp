@@ -27,12 +27,14 @@ void MainWindow::on_branch_TextHere_textChanged()
 {
     QString textValue = ui->branch_TextHere->toPlainText();
     receipt.setBranch(textValue.toStdString());
+    ui->textBrowser->setText(receipt.printReceipt());
 }
 
 void MainWindow::on_city_TextHere_textChanged()
 {
     QString textValue = ui->city_TextHere->toPlainText();
     receipt.setCity(textValue.toStdString());
+    ui->textBrowser->setText(receipt.printReceipt());
 }
 
 
