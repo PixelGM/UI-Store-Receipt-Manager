@@ -7,8 +7,7 @@ Receipt receipt;
 
 void MainWindow::updateTextBrowser()
 {
-    QString receiptText = receipt.printReceipt(); // Assuming printReceipt() returns a QString
-    ui->textBrowser->setText(receiptText);
+    ui->textBrowser->setText(receipt.printReceipt());
 }
 
 
