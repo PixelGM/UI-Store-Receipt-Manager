@@ -5,6 +5,12 @@
 
 Receipt receipt;
 
+void MainWindow::updateTextBrowser()
+{
+    QString receiptText = receipt.printReceipt(); // Assuming printReceipt() returns a QString
+    ui->textBrowser->setText(receiptText);
+}
+
 
 
 // UI
@@ -24,19 +30,19 @@ void MainWindow::on_title_TextHere_textChanged()
 {
     QString textValue = ui->title_TextHere->toPlainText();
     receipt.setTitle(textValue.toStdString());
-    ui->textBrowser->setText(receipt.printReceipt());
+    updateTextBrowser();
 }
 
 void MainWindow::on_branch_TextHere_textChanged()
 {
     QString textValue = ui->branch_TextHere->toPlainText();
     receipt.setBranch(textValue.toStdString());
-    ui->textBrowser->setText(receipt.printReceipt());
+    updateTextBrowser();
 }
 
 void MainWindow::on_city_TextHere_textChanged()
 {
     QString textValue = ui->city_TextHere->toPlainText();
     receipt.setCity(textValue.toStdString());
-    ui->textBrowser->setText(receipt.printReceipt());
+    updateTextBrowser();
 }

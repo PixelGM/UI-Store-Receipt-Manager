@@ -16,6 +16,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void updateTextBrowser();
+
     void on_city_TextHere_textChanged();
 
     void on_branch_TextHere_textChanged();
