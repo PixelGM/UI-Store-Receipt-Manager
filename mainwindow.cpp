@@ -13,3 +13,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_radioButton_clicked(bool checked)
+{
+    if (checked) {
+        ui->textBrowser->setText("The radio button is checked.");
+    } else {
+        ui->textBrowser->setText("The radio button is not checked.");
+    }
+}
+
