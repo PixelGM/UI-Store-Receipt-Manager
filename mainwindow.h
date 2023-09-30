@@ -20,6 +20,8 @@ private slots:
 
     void on_branch_TextHere_textChanged();
 
+    void on_title_TextHere_textChanged();
+
 private:
     Ui::MainWindow *ui;
 };

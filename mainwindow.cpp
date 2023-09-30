@@ -5,6 +5,9 @@
 
 Receipt receipt;
 
+
+
+// UI
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,9 +20,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_title_TextHere_textChanged()
 {
+    QString textValue = ui->title_TextHere->toPlainText();
+    receipt.setTitle(textValue.toStdString());
     ui->textBrowser->setText(receipt.printReceipt());
 }
 
@@ -36,6 +40,3 @@ void MainWindow::on_city_TextHere_textChanged()
     receipt.setCity(textValue.toStdString());
     ui->textBrowser->setText(receipt.printReceipt());
 }
-
-
-
