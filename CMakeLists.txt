@@ -23,6 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(UI_Store_Receipt_Manager
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        import/receipt.json import/store.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET UI_Store_Receipt_Manager APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
