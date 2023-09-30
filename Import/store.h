@@ -82,7 +82,7 @@ public:
         items.push_back(item);
     }
 
-    QString printReceipt() const {
+    QString getReceipt() const {
         QString receipt;
         QTextStream out(&receipt);
 
@@ -274,7 +274,7 @@ void processCommand(Receipt& receipt) {
             }
         }
         else if (cmd == "/print") {
-            receipt.printReceipt();
+            receipt.getReceipt();
         }
         else if (cmd == "/save") {
             save_to_file(receipt, "receipt.json");
