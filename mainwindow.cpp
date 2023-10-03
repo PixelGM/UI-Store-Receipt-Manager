@@ -42,6 +42,20 @@ void MainWindow::hideSettingsUI()
     ui->title_label->hide();
 }
 
+void MainWindow::showSettingsUI()
+{
+    ui->branch_TextHere->show();
+    ui->branch_label->show();
+    ui->city_TextHere->show();
+    ui->city_label->show();
+    ui->street_TextHere->show();
+    ui->street_label->show();
+    ui->textBrowser->show();
+    ui->title_TextHere->show();
+    ui->title_label->show();
+}
+
+
 void MainWindow::on_title_TextHere_textChanged()
 {
     QString textValue = ui->title_TextHere->toPlainText();
@@ -72,6 +86,19 @@ void MainWindow::on_city_TextHere_textChanged()
 
 void MainWindow::on_pushButton_clicked()
 {
-    hideSettingsUI();
+    bool hidden = false;
+
+    if (hidden == false)
+    {
+        hideSettingsUI();
+        ui->pushButton->setText("Show");
+        hidden = true;
+    }
+    else
+    {
+        showSettingsUI();
+        ui->pushButton->setText("Hide");
+        hidden = false;
+    }
 }
 

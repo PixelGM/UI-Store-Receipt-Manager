@@ -18,6 +18,8 @@ public:
 private slots:
     void hideSettingsUI();
 
+    void showSettingsUI();
+
     void updateTextBrowser();
 
     void on_city_TextHere_textChanged();
