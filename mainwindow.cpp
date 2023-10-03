@@ -3,6 +3,10 @@
 
 #include "import/store.h"
 
+// Note for Coder:
+// Object is got by using pointer (example: ui->title_TextHere)
+// title_TextHere is the object. You can call a function (e.x. ui->title_TextHere->setText("bla"))
+
 Receipt receipt;
 
 void MainWindow::updateTextBrowser()
