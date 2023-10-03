@@ -16,6 +16,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void hideSettingsUI();
+
     void updateTextBrowser();
 
     void on_city_TextHere_textChanged();
@@ -25,6 +27,8 @@ private slots:
     void on_title_TextHere_textChanged();
 
     void on_street_TextHere_textChanged();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

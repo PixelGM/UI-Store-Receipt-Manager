@@ -69,3 +69,9 @@ void MainWindow::on_city_TextHere_textChanged()
     receipt.setCity(textValue.toStdString());
     updateTextBrowser();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    hideSettingsUI();
+}
+
