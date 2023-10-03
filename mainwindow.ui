@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="branch_TextHere">
+   <widget class="QTextEdit" name="street_TextHere">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -57,7 +57,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="branch_label">
+   <widget class="QLabel" name="street_label">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -67,7 +67,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="text">
-     <string>Branch</string>
+     <string>Street</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="city_TextHere">
@@ -142,7 +142,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Store Title</string>
     </property>
    </widget>
-   <widget class="QLabel" name="street_label">
+   <widget class="QLabel" name="branch_label">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -152,10 +152,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="text">
-     <string>Street</string>
+     <string>Branch</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="street_TextHere">
+   <widget class="QTextEdit" name="branch_TextHere">
     <property name="enabled">
      <bool>true</bool>
     </property>
