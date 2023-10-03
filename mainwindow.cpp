@@ -29,6 +29,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::hideSettingsUI()
+{
+    ui->branch_TextHere->hide();
+    ui->branch_label->hide();
+    ui->city_TextHere->hide();
+    ui->city_label->hide();
+    ui->street_TextHere->hide();
+    ui->street_label->hide();
+    ui->textBrowser->hide();
+    ui->title_TextHere->hide();
+    ui->title_label->hide();
+}
+
 void MainWindow::on_title_TextHere_textChanged()
 {
     QString textValue = ui->title_TextHere->toPlainText();
