@@ -11,7 +11,7 @@ Receipt receipt;
 
 void MainWindow::updateTextBrowser()
 {
-    ui->textBrowser->setText(receipt.getReceipt());
+    ui->textBrowser->setText(receipt.printReceipt());
 }
 
 
