@@ -48,10 +48,10 @@ private:
     std::vector<Item> items;
 
 public:
-    // Default constructor
+    // Receipt constructor
     Receipt()
-        : title("STORE TITLE..."), branch("Branch..."), street("Street..."),
-        city("City..."), member(000000000000) {
+        : title(""), branch(""), street(""),
+        city(""), member(000000000000) {
         items.push_back(Item()); // Default item (Bananas)
         items.push_back(Item(55506, "Chicken", 34.21));
     }
