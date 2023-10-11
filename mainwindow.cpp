@@ -86,8 +86,10 @@ void MainWindow::on_city_TextHere_textChanged()
 
 void MainWindow::on_pushButton_clicked()
 {
-    bool hidden = false;
+    // I can make 'hidden' a static variable to persist its state between function calls
+    static bool hidden = false;
 
+    // Check the current state of 'hidden'
     if (hidden == false)
     {
         hideSettingsUI();
@@ -101,4 +103,5 @@ void MainWindow::on_pushButton_clicked()
         hidden = false;
     }
 }
+
 
