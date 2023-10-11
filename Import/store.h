@@ -116,6 +116,17 @@ public:
         return receipt;
     }
 
+    QString printSettings() const {
+        QString receipt;
+        QTextStream out(&receipt);
+
+        out << "Title: " << QString::fromStdString(title) << "\n";
+        out << "Branch: " << QString::fromStdString(branch) << "\n";
+        out << "Street: " << QString::fromStdString(street) << "\n";
+        out << "City: " << QString::fromStdString(city) << "\n";
+
+        return receipt;
+    }
 
     void applyDiscountToItem(int itemId, double percentage) {
         for (auto& item : items) {
