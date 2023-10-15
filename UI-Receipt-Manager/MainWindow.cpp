@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "import/store.h"
+#include "Import/store.h"
 
 // Note for Coder:
 // Object is got by using pointer (example: ui->title_TextHere)
